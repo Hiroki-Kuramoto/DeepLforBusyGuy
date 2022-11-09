@@ -1,0 +1,6 @@
+pyocr
+pyautogui
+keyboard
+pytesseract
+deepl
+pillow
