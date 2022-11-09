@@ -14,7 +14,7 @@ from OCR import image2doc
 # pip install deepl
 import deepl
 
-DEEPL_KEY = "fa64391c-a63c-170c-0dd7-cf9bc6fec5e6:fx"
+DEEPL_KEY = "your Deepl API key"
 
 def main():
     while True:
