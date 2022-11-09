@@ -58,18 +58,21 @@ def main():
     XYXY = (topLeft.x*2, topLeft.y*2, bottomRight.x*2, bottomRight.y*2)
     print(f"{XYXY =}")
     print("main >> All setups completed.")
+    # stdinを1行だけクリアする
+    sys.stdin.read(1)
 
     while True:
         input("\033[32m>> Press [Enter].\033[0m")
         img:Image = getScreenshot(XYXY)
         doc:str   = image2doc(img)
         assert type(doc) == str, "Type Error: image2doc() returned non-string type."
+        doc = doc.replace(" "*2, " ")
         docs = doc.split("\n\n")
         docs = list(map(lambda x: x.replace("\n"," "), docs))
         doc  = "\n\n".join(docs)
-        ##########result = translator.translate_text(doc, source_lang="EN", target_lang="JA").text
-        ##########print(f"\033[3m{result}\033[0m")
-        print(f"\n\033[33m{doc}\033[0m\n")
+        # print(f"\n\033[33m{doc}\033[0m\n")
+        result = translator.translate_text(doc, source_lang="EN", target_lang="JA").text
+        print(f"\033[3m{result}\033[0m")
         time.sleep(1)
         sys.stdin.flush()
 
