@@ -1,7 +1,6 @@
 from getScreen import getScreenshot
 from PIL import Image
 
-import sys
 # pip install pyautogui
 import pyautogui
 import time
@@ -13,6 +12,11 @@ from OCR import image2doc
 
 # pip install deepl
 import deepl
+
+# for summarize
+from pysummarization.nlpbase.auto_abstractor import AutoAbstractor
+from pysummarization.tokenizabledoc.mecab_tokenizer import MeCabTokenizer
+from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstractor
 
 DEEPL_KEY = "your Deepl API key"
 
@@ -72,6 +76,18 @@ def main():
         result = translator.translate_text(doc, source_lang="EN", target_lang="JA").text
         print(f"\n* * * * * * * * * * * * * * * * * * * *\n\033[33m{result}\033[0m\n* * * * * * * * * * * * * * * * * * * *\n")
 
+        # summarize the english document (i.e., doc) to 2 sentences.
+        auto_abstractor = AutoAbstractor()
+        auto_abstractor.tokenizable_doc = MeCabTokenizer()
+        auto_abstractor.delimiter_list = [".", "\n"]
+        # Object of abstracting and filtering document.
+        abstractable_doc = TopNRankAbstractor()
+        # Summarize document.
+        result_dict = auto_abstractor.summarize(doc, abstractable_doc)
+        # Output result.
+        summary = result_dict["summarize_result"][0]
+        result = translator.translate_text(summary, source_lang="EN", target_lang="JA").text
+        print(f"\033[2mSummary >> {result}\033[0m")
 
 
 if __name__ == "__main__":

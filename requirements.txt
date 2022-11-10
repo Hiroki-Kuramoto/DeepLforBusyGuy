@@ -1,6 +1,15 @@
+# for base
 pyocr
 pyautogui
 keyboard
 pytesseract
-deepl
 pillow
+
+# for mathine translation
+deepl
+
+# for summarization
+pysummarization
+mecab-python3
+unidic-lite
+accel-brain-base
