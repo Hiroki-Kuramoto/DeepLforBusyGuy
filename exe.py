@@ -1,3 +1,5 @@
+import configparser
+
 from getScreen import getScreenshot
 from PIL import Image
 
@@ -18,10 +20,18 @@ from pysummarization.nlpbase.auto_abstractor import AutoAbstractor
 from pysummarization.tokenizabledoc.mecab_tokenizer import MeCabTokenizer
 from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstractor
 
-DEEPL_KEY = "your Deepl API key"
+
+config = configparser.ConfigParser()
+config.read('configurations.cfg')
+
+DEEPL_KEY = config["DEFAULT"]["DEEPL_KEY"]
+SUMMARY   = config["DEFAULT"]["SUMMARY_LENGTH"]
+PRE_LANG  = config["DEFAULT"]["PRE_LANG"]
+POST_LANG = config["DEFAULT"]["POST_LANG"]
+OCR_LANG  = config["DEFAULT"]["OCR_LANG"]
+
 
 def main():
-    SUMMARY = 3
     while True:
         """
         get leftTop coordinates
@@ -67,14 +77,14 @@ def main():
 
 
         img:Image = getScreenshot(XYXY)
-        doc:str   = image2doc(img)
+        doc:str   = image2doc(img, OCR_LANG)
         assert type(doc) == str, "Type Error: image2doc() returned non-string type."
         doc = doc.replace(" "*2, " ")
         docs = doc.split("\n\n")
         docs = list(map(lambda x: x.replace("\n"," "), docs))
         doc  = "\n\n".join(docs)
         # print(f"\n\033[33m{doc}\033[0m\n")
-        result = translator.translate_text(doc, source_lang="EN", target_lang="JA").text
+        result = translator.translate_text(doc, source_lang=PRE_LANG, target_lang=POST_LANG).text
         print(f"\n* * * * * * * * * * * * * * * * * * * *\n\033[33m{result}\033[0m\n* * * * * * * * * * * * * * * * * * * *\n")
 
         # summarize the english document (i.e., doc) to 2 sentences.
@@ -93,7 +103,7 @@ def main():
                 summary += sentence + " "
             else:
                 break
-        summary_result = translator.translate_text(summary, source_lang="EN", target_lang="JA").text
+        summary_result = translator.translate_text(summary, source_lang=PRE_LANG, target_lang=POST_LANG).text
         print(f"\033[2mSummary >> {summary_result}\033[0m")
 
 
