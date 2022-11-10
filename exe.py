@@ -33,7 +33,7 @@ def main():
             point = str(pyautogui.position())
             print(point, end="", flush=True)
             time.sleep(0.01)
-        print("Enter was pressed >> ", end="")
+        print("[SPACE] was pressed >> ", end="")
         topLeft = pyautogui.position()
         print(f"topLeft = {topLeft}")
         time.sleep(1)
@@ -52,7 +52,7 @@ def main():
             point = str(pyautogui.position())
             print(point, end="", flush=True)
             time.sleep(0.01)
-        print("Enter was pressed >> ", end="")
+        print("[SPACE] was pressed >> ", end="")
         bottomRight = pyautogui.position()
         print(f"bottomRight = {bottomRight}")
 
