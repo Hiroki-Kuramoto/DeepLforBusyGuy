@@ -78,6 +78,7 @@ def main():
         print(f"\n* * * * * * * * * * * * * * * * * * * *\n\033[33m{result}\033[0m\n* * * * * * * * * * * * * * * * * * * *\n")
 
         # summarize the english document (i.e., doc) to 2 sentences.
+        doc = " ".join(docs)
         auto_abstractor = AutoAbstractor()
         auto_abstractor.tokenizable_doc = MeCabTokenizer()
         auto_abstractor.delimiter_list = [".", "\n"]
@@ -92,8 +93,8 @@ def main():
                 summary += sentence + " "
             else:
                 break
-        result = translator.translate_text(summary, source_lang="EN", target_lang="JA").text
-        print(f"\033[2mSummary >> {result}\033[0m")
+        summary_result = translator.translate_text(summary, source_lang="EN", target_lang="JA").text
+        print(f"\033[2mSummary >> {summary_result}\033[0m")
 
 
 if __name__ == "__main__":
