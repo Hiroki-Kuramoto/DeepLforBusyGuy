@@ -21,7 +21,7 @@ def main():
         """
         get leftTop coordinates
         """
-        print("\033[32m\033[1m topLeft\033[0m : \033[32mposition cursor and press [SPACE].\033[0m")
+        print("\033[32m\033[1m topLeft\033[0m : \033[32mposition cursor and press [SPACE].\033[0m",end=" ")
         point = ""
         while True:
             # interrupt processing
@@ -40,7 +40,7 @@ def main():
         """
         get bottomRight coordinates
         """
-        print("\033[32m\033[1m bottomRight\033[0m : \033[32mposition cursor and press [SPACE].\033[0m")
+        print("\033[32m\033[1m bottomRight\033[0m : \033[32mposition cursor and press [SPACE].\033[0m",end=" ")
         point = ""
         while True:
             # interrupt processing
@@ -57,9 +57,8 @@ def main():
         print(f"bottomRight = {bottomRight}")
 
         XYXY = (topLeft.x*2, topLeft.y*2, bottomRight.x*2, bottomRight.y*2)
-        print(f"{XYXY =}")
-        print("main >> All setups completed.")
-        # stdinを1行だけクリアする
+        # print(f"{XYXY =}")
+        # print("main >> All setups completed.")
 
 
         img:Image = getScreenshot(XYXY)
