@@ -22,10 +22,10 @@ from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstra
 
 
 config = configparser.ConfigParser()
-config.read('configurations.cfg')
+config.read('settings.cfg')
 
 DEEPL_KEY = config["DEFAULT"]["DEEPL_KEY"]
-SUMMARY   = config["DEFAULT"]["SUMMARY_LENGTH"]
+SUMMARY   = int(config["DEFAULT"]["SUMMARY_LENGTH"])
 PRE_LANG  = config["DEFAULT"]["PRE_LANG"]
 POST_LANG = config["DEFAULT"]["POST_LANG"]
 OCR_LANG  = config["DEFAULT"]["OCR_LANG"]
