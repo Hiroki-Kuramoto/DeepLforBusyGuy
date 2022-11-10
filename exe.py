@@ -21,6 +21,7 @@ from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstra
 DEEPL_KEY = "your Deepl API key"
 
 def main():
+    SUMMARY = 3
     while True:
         """
         get leftTop coordinates
@@ -85,7 +86,12 @@ def main():
         # Summarize document.
         result_dict = auto_abstractor.summarize(doc, abstractable_doc)
         # Output result.
-        summary = result_dict["summarize_result"][0]
+        summary = ""
+        for count, sentence in enumerate(result_dict["summarize_result"]):
+            if count < SUMMARY:
+                summary += sentence + " "
+            else:
+                break
         result = translator.translate_text(summary, source_lang="EN", target_lang="JA").text
         print(f"\033[2mSummary >> {result}\033[0m")
 
