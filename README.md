@@ -29,7 +29,7 @@ In default, this tool translate English to Japanese as you can see in `settings.
 1. まずDeepLの無料のAPIキーを取得します[[ここから]](https://www.deepl.com/pro#developer)．
 2. [DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy)をクローン
 3. クローンしたディレクトリに移動
-4. `exe.py`の先頭の方にあるグローバル変数`DEEPL_KEY`に(1.)で取得したDeepLキーを貼り付ける．
+4. `settings.cfg`のにある`DEEPL_KEY`に(1.)で取得したDeepLキーを貼り付ける．
 5. `pip install -r requirements.txt`
 6. `sudo python exe.py`
 指示に応じて画面の監視やキーボード入力の監視の権限をTerminalに付与する必要があります．
