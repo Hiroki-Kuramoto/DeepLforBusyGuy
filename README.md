@@ -12,6 +12,7 @@ In default, this tool translate English to Japanese as you can see in `settings.
 # あらまし
 
 ”忙しい人のための”シリーズをご存じでしょうか？
+
 忙しいくて急いでいる人にも内容を知ってもらうために，様々なコンテンツを要約してあげようという取り組みです．
 
 - [忙しい人のための「翼をください」](https://www.youtube.com/watch?v=kkb-0AdXJu0)
@@ -44,7 +45,9 @@ In default, this tool translate English to Japanese as you can see in `settings.
 <img width="1077" alt="スクリーンショット 2022-11-10 16.02.41.png (389.2 kB)" src="https://img.esa.io/uploads/production/attachments/17714/2022/11/10/104140/89e93165-6cb6-4c1c-9dc8-65590d9c6a36.png">
 
 すると，
+
 <img width="727" alt="スクリーンショット 2022-11-10 16.03.31.png (171.2 kB)" src="https://img.esa.io/uploads/production/attachments/17714/2022/11/10/104140/1a790ea6-c6b5-4fea-9331-f01936f0370a.png">
+
 [SPACE]キーが押されたことを認識し，その時のカーソルの位置を取得しました．
 
 2. 次は，翻訳&要約したい文章の右下（bottomRight）を同じように指定します．
@@ -57,4 +60,6 @@ In default, this tool translate English to Japanese as you can see in `settings.
 ## Issues
 - 要約の精度が悪い
 多くの場合，最初の一文をちょこっとだけ変えて表示されるだけになっている．（期待しないでという意味を込めて，薄く表示しています）
+
+
 今後，アップデートするかもしれません．
