@@ -1,4 +1,4 @@
-# DeepL for Lazy guy
+# DeepL for Busy guy
 - Translate your desktop using OCR and DeepL REST API
 
 ## How to use
