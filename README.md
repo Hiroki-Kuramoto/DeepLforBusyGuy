@@ -2,7 +2,7 @@
 - You want to translate an English text, but you can't copy it (e.g., the English text in an image).
 - When you copy and paste on the DeepL website, the sentenses you copied contain line breaks in improper places and you can't translate the text properly.
 
-In default, this tool translate English to Japanese as you can see in `settings.cfg`, but you may be able to use another language sets.
+By default, this tool translate English to Japanese as you can see in `settings.cfg`, but you may be able to use another language sets.
 
 # DeepLforBusyGuy
 今回紹介する「[DeepLforBusyGuy]([DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy))」は，以下のような問題を解決します．
