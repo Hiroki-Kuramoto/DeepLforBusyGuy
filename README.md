@@ -7,7 +7,8 @@ DeepLforBusyGuy solves the following problems.
 By default, this tool translate English to Japanese as you can see in `settings.cfg`, but you may be able to use another language sets.
 
 # DeepLforBusyGuy
-今回紹介する「[DeepLforBusyGuy]([DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy))」は，以下のような問題を解決します．
+
+今回紹介する「[DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy)」は，以下のような問題を解決します．
 - 英文を翻訳したいけど，コピーできない（e.g., 画像中の英文）
 - コピー&ペーストすると変なところに改行が入ってうまく翻訳できない
 
@@ -28,7 +29,7 @@ By default, this tool translate English to Japanese as you can see in `settings.
 # 使い方
 ## セットアップ編
 1. まずDeepLの無料のAPIキーを取得します[[ここから]](https://www.deepl.com/pro#developer)．
-2. [DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy)をクローン
+2. [DeepLforBusyGuy](https://github.com/Hiroki-Kuramoto/DeepLforBusyGuy/releases/tag/v1.0)をクローン
 3. クローンしたディレクトリに移動
 4. `settings.cfg`のにある`DEEPL_KEY`に(1.)で取得したDeepLキーを貼り付ける．
 5. `pip install -r requirements.txt`
