@@ -33,7 +33,8 @@ By default, this tool translate English to Japanese as you can see in `settings.
 3. クローンしたディレクトリに移動
 4. `settings.cfg`のにある`DEEPL_KEY`に(1.)で取得したDeepLキーを貼り付ける．
 5. `pip install -r requirements.txt`
-6. `sudo python exe.py`
+6. `brew install tesseract`
+7. `sudo python exe.py`
 指示に応じて画面の監視やキーボード入力の監視の権限をTerminalに付与する必要があります．
 
 以下の表示がでれば，成功です．
